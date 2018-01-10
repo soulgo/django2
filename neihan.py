@@ -6,7 +6,7 @@ class Spider:
     def __init__(self):
         # 初始化起始页位置
         self.page = 2
-        # 爬取开关，如果为True继续爬取
+
         self.switch = True
 
     def loadPage(self):
@@ -63,7 +63,7 @@ class Spider:
             self.page += 1
         print "谢谢使用！"
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
         duanziSpider = Spider()
         #    duanziSpider.loadPage()
         duanziSpider.startWork()
