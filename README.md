@@ -5,3 +5,7 @@ sudo apt-get install nodejs-legacy
 sudo apt-get install npm
 sudo npm -g install phantomjs-prebuilt
 ```
+- 2、ubuntu python安装beautifulsoup4
+```
+pip install beautifulsoup4
+```

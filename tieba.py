@@ -35,6 +35,7 @@ def loadImage(link):
     html = urllib2.urlopen(request).read()
     # 解析
     content = etree.HTML(html)
+    print content
     # 取出帖子里每层层主发送的图片连接集合
     link_list = content.xpath('//img[@class="BDE_Image"]/@src')
     # 取出每个图片的连接
@@ -72,7 +73,7 @@ def tiebaSpider(url, beginPage, endPage):
         pn = (page - 1) * 50
         #filename = "第" + str(page) + "页.html"
         fullurl = url + "&pn=" + str(pn)
-        #print fullurl
+        print fullurl
         loadPage(fullurl)
         #print html
 
