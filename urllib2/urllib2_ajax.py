@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #encoding:UTF-8
-import django2.urllib2
+import urllib2
 import urllib
 url = "https://movie.douban.com/j/chart/top_list?type=11&interval_id=100%3A90&action"
 headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"}
@@ -13,6 +13,6 @@ formdata = {
     "limit":"20"
 }
 data = urllib.urlencode(formdata)
-request = django2.urllib2.Request(url, headers=headers, data=data)
-response = django2.urllib2.urlopen(request)
+request = urllib2.Request(url,headers=headers,data=data)
+response = urllib2.urlopen(request)
 print response.read()

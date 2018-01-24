@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
-import django2.urllib2
+import urllib2
 import json
 from lxml import etree
 url = "https://www.qiushibaike.com/8hr/page/2/"
 headers = {"User-Agent" : "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0;"}
-request = django2.urllib2.Request(url, headers=headers)
-html = django2.urllib2.urlopen(request).read()
+request = urllib2.Request(url,headers=headers)
+html = urllib2.urlopen(request).read()
 text = etree.HTML(html)
 
 node_list = text.xpath('//div[contains(@id, "qiushi_tag")]')

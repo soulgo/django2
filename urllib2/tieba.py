@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
-import django2.urllib2
+import urllib2
 import urllib
 from lxml import etree
 
@@ -12,8 +12,8 @@ def loadPage(url):
     #print url
     #headers = {"User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"}
 
-    request = django2.urllib2.Request(url)
-    html = django2.urllib2.urlopen(request).read()
+    request = urllib2.Request(url)
+    html = urllib2.urlopen(request).read()
     # 解析HTML文档为HTML DOM模型
     content = etree.HTML(html)
     #print content
@@ -31,8 +31,8 @@ def loadPage(url):
 # 取出每个帖子里的每个图片连接
 def loadImage(link):
     headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}
-    request = django2.urllib2.Request(link, headers = headers)
-    html = django2.urllib2.urlopen(request).read()
+    request = urllib2.Request(link, headers = headers)
+    html = urllib2.urlopen(request).read()
     # 解析
     content = etree.HTML(html)
     print content
@@ -52,9 +52,9 @@ def writeImage(link):
     #print "正在保存 " + filename
     headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}
     # 文件写入
-    request = django2.urllib2.Request(link, headers = headers)
+    request = urllib2.Request(link, headers = headers)
     # 图片原始数据
-    image = django2.urllib2.urlopen(request).read()
+    image = urllib2.urlopen(request).read()
     # 取出连接后10位做为文件名
     filename = link[-10:]
     # 写入到本地磁盘文件内

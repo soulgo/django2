@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
-import django2.urllib2
+import urllib2
 import random
 proxy_list = [
     {"180.110.167.196":"8118"},
@@ -10,8 +10,8 @@ proxy_list = [
 ]
 
 proxy = random.choice(proxy_list)
-httpproxy_handler = django2.urllib2.ProxyHandler()
-opener = django2.urllib2.build_opener(httpproxy_handler)
-request = django2.urllib2.Request("http://www.baidu.com")
+httpproxy_handler = urllib2.ProxyHandler()
+opener = urllib2.build_opener(httpproxy_handler)
+request = urllib2.Request("http://www.baidu.com")
 response = opener.open(request)
 print response.read()

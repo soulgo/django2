@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 #encoding:UTF-8
 import urllib
-import django2.urllib2
+import urllib2
 from bs4 import BeautifulSoup
 import random,string
 url ='http://www.dbmeinv.com/?pager_offset=1'
 x=1
 def loadImage(url):
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
-    req =  django2.urllib2.Request(url, headers=headers)#伪装浏览器访问
-    page = django2.urllib2.urlopen(req, timeout=20)#打开网页
+    req =  urllib2.Request(url,headers=headers)#伪装浏览器访问
+    page = urllib2.urlopen(req,timeout=20)#打开网页
     contents = page.read()#获取源码
     #html.parser解析网页xml功能更强大
     soup = BeautifulSoup(contents,'html.parser')#创建一个soup对象

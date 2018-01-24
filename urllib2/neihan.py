@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # _*_ coding:utf-8 _*_
-import django2.urllib2
+import urllib2
 import re
 class Spider:
     def __init__(self):
@@ -13,8 +13,8 @@ class Spider:
         print "正在下载数据..."
         url = "http://www.isocialkey.com/article/index_"+ str(self.page)+".html"
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}
-        request = django2.urllib2.Request(url, headers=headers)
-        response = django2.urllib2.urlopen(request)
+        request = urllib2.Request(url,headers=headers)
+        response = urllib2.urlopen(request)
         # 获取每页的HTML源码字符串
         html = response.read()
         # 创建正则表达式规则对象，匹配每页里的段子内容，re.S 表示匹配全部字符串内容

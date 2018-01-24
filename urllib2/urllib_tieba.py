@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #encoding:UTF-8
 import urllib
-import django2.urllib2
+import urllib2
 def loadPage(url,fileName):
     """
         作用：根据url发送请求，获取服务器响应文件
@@ -10,8 +10,8 @@ def loadPage(url,fileName):
     """
     print "正在下载" + fileName
     headers = {"User-Agent" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"}
-    request = django2.urllib2.Request(url, headers=headers)
-    return django2.urllib2.urlopen(request).read()
+    request = urllib2.Request(url,headers=headers)
+    return urllib2.urlopen(request).read()
 def writePage(html,fileName):
     """
         作用：将html内容写入到本地
