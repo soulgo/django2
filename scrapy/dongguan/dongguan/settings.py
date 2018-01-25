@@ -14,7 +14,8 @@ BOT_NAME = 'dongguan'
 SPIDER_MODULES = ['dongguan.spiders']
 NEWSPIDER_MODULE = 'dongguan.spiders'
 
-
+#LOG_FILE = 'dg.log'
+#LOG_LEVEL = "DEBUG"
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'dongguan (+http://www.yourdomain.com)'
 
